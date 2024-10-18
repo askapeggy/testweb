@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fornt</title>
+    <!-- GOOGLE FONT 收尋 GOOGLE FONT進入抓取 -->
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+Oriya:wght@400..700&display=swap"
+        rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@100;300;400;900&family=Noto+Sans+JP:wght@100..900&family=Noto+Serif+Oriya:wght@400..700&family=Sixtyfour+Convergence&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            font-size: 16px;
+        }
+
+        body {
+            font-size: 20px;
+            /* font-family: "Sixtyfour Convergence", sans-serif; */
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .fornt-style {
+            /* 單位可以是 px rem em */
+            font-size: 30px;
+            font-style: italic;
+            /* 設定粗體 */
+            font-weight: bolder;
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        .google-font {
+            font-size: 50px;
+            font-family: "Londrina Solid", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+        }
+
+        .text-style {
+            font-family: "Londrina Solid", sans-serif;
+            /*排版 */
+            text-align: left;
+            /* 底線 underline  overline line-through */
+            text-decoration: underline;
+            /*第一行文字縮排*/
+            text-indent: 100px;
+            /* 字母與字母的間隔 */
+            letter-spacing: 10px;
+            /* 英文有支援"空白鍵" 中文不支援*/
+            word-spacing: 50px;
+            /*行高 可以設定單位值 也可以設定倍數*/
+            line-height: 50px;
+            font-size: 40px;
+        }
+
+        .text-shadow {
+            font-family: '微軟正黑體', Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 100px;
+            /*水平位移(+為右-為左) 垂直位移(+為下 -為上) 模糊半徑*/
+            /*text-shadow: 48px -61px 12px rgba(201, 0, 0, 0.5);*/
+            /* 收尋 CSS generator 產生器  就可以找到數值 貼上*/
+            text-shadow: 48px -61px 12px rgba(201, 0, 0, 0.5),
+                -48px 61px 12px rgba(201, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>1.Font 樣式設定</h1>
+    <div class="fornt-style">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio nostrum necessitatibus vero et eum asperiores
+        corrupti consequuntur ratione, repellat, recusandae omnis fugiat maxime voluptate ipsum repellendus excepturi?
+        Totam, ipsum animi.
+    </div>
+    <h2>2.Google Font</h2>
+    <div class="google-font">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus quo, quaerat cupiditate et voluptate at
+        neque suscipit repellat similique voluptatum. Iusto neque cumque dolor et sint labore nulla, consequuntur
+        incidunt?
+    </div>
+    <h2>3.Text</h2>
+    <p class="text-style">Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda illum, nam distinctio modi
+        pariatur ad animi
+        est eaque, culpa iure quas molestiae quaerat dolorem, porro voluptatibus recusandae amet. Illo, nobis?</p>
+    <h2>4.文字陰影</h2>
+    <p class="text-shadow">PHP is the base.</p>
+    <h2>5.rem 與 em 差異</h2>
+    <h3>rem</h3>
+    <p>為 root 預設 font-size 的倍數,預設為16px</p>
+    <p>:root選擇器,指的是跟元素 html</p>
+    <div style="font-size: 1rem;">
+        font
+        <div style="font-size: 2rem;">
+            font
+            <div style="font-size: 3rem;">font</div>
+        </div>
+    </div>
+    <hr>
+    <h3>em</h3>
+    <p>可能為父層或祖先層的 font-size 倍數</p>
+    <p>父層若有設定文字尺寸以他為準,沒有會繼續往外找</p>
+    <div style="font-size: 1em;">
+        font
+        <div style="font-size: 2em;">
+            font
+            <div style="font-size: 3em;">font</div>
+        </div>
+    </div>
+</body>
+
+</html>

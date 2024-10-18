@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /*
+        body {
+            background-image: url("https://truth.bahamut.com.tw/s01/201610/88ba080e7c31f84a956be1e7861ccf28.JPG?w=1000");
+            background-attachment: fixed;
+        }
+            */
+
+        .attachement {
+            width: 600px;
+            height: 600px;
+            max-width: 50px auto;
+            border: 5px solid #eb1111;
+            background-image: url("https://truth.bahamut.com.tw/s01/201610/88ba080e7c31f84a956be1e7861ccf28.JPG?w=1000");
+            background-attachment: fixed;
+        }
+
+        .box {
+            /*BOX設定的部分*/
+            width: 600px;
+            height: 600px;
+            border: 5px solid #333;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            margin: 50px auto;
+            /*文字的部分*/
+            font-size: 3rem;
+            text-align: center;
+            color: yellow;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0);
+            backdrop-filter: blur(5px);
+        }
+
+        .bg-color {
+            background-color: #faa;
+        }
+
+        .bg-img {
+            /*picsum*/
+            background-image: url("https://picsum.photos/300/200/?random=10");
+        }
+
+        .bg-repeat-x {
+            background-repeat: repeat-x;
+        }
+
+        .bg-repeat-y {
+            background-repeat: repeat-y;
+        }
+
+        .bg-no-repeat {
+            background-repeat: no-repeat;
+        }
+
+        .bg-position {
+            /* 雙值 第一個是水平 第二個是垂直 */
+            /*left center right <=> 0% 50% 100%*/
+            /*top center bottom <=> 0% 50% 100%*/
+            background-position: center center;
+        }
+
+        .bg-size {
+            background-image: url("https://truth.bahamut.com.tw/s01/201610/88ba080e7c31f84a956be1e7861ccf28.JPG?w=1000");
+            background-repeat: no-repeat;
+            background-position: 59px -19px;
+            /* 關鍵字有 contain cover */
+            /* background-size: cover; */
+            background-size: 500px;
+        }
+
+        .bg-abbr {
+            /* background: color image repeat position / size  一定要有斜線區隔*/
+            background: #ffa url("https://truth.bahamut.com.tw/s01/201610/88ba080e7c31f84a956be1e7861ccf28.JPG?w=1000") no-repeat 59px -19px / 500px;
+        }
+
+        /* 
+        很重要
+        box model  了解in line inline block block 的差異
+        flexbox 的應用
+        @media query RWD
+         */
+    </style>
+</head>
+
+<body>
+    <div class="box attachement"> background-color</div>
+    <div class="box bg-color">background-color</div>
+    <div class="box bg-img">background-color</div>
+
+    <div class="box bg-img bg-repeat-x">background-color</div>
+    <div class="box bg-img bg-repeat-y">background-color</div>
+    <div class="box bg-img bg-no-repeat">background-color</div>
+    <div class="box bg-img bg-no-repeat bg-position">background-color</div>
+    <div class="box bg-size">background-size</div>
+    <div class="box bg-abbr">縮寫</div>
+</body>
+
+</html>

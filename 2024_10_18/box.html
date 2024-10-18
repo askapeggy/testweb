@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #div1 {
+            width: 300px;
+            height: 300px;
+            background: pink;
+            /* 
+            padding 內距
+            margin 外距
+
+            padding  一次設定
+            一個值: 上下左右
+            兩個值: 上下 左右
+            三個值: 上 左右 下
+            四個值: 上 右 下 左
+
+            padding         一次設定
+            padding-top     上面
+            padding-bottom  下面
+            padding-right   右
+            padding-left    左
+             */
+            padding: 10px 20px 30px 40px;
+            /* 
+            margin 
+            左右設為 auto 可以置中
+            右邊設為 auto 可以靠左
+            左邊設為 auto 可以靠右
+             */
+            margin: 10px 0 10px auto;
+            /*border: border-width border-style border-color */
+            /*border: 1px solid black */
+            border: 1px dashed black;
+            /*外框* 不占大小 位置在border*/
+            outline: 5px solid red;
+            /*外框 border的間距*/
+            outline-offset: 6px;
+            box-shadow: 0px 0px 10px black;
+            /* box-sizing 控制寬高設定的範圍
+                content-box 只包含內容區(預設)
+                border-box  包含內容:padding 邊框
+             */
+            box-sizing: border-box;
+        }
+
+        #div2 {
+            width: 300px;
+            height: 300px;
+            background: red;
+            /* 
+            overflow 東西超出內容區時候處裡
+            auto    自動
+            visible 看的到
+            hidden  隱藏
+
+            overflow-x overflow-y 分別設定
+             */
+            overflow: auto;
+        }
+
+        /* 
+        input {
+            background: blue;
+            outline-offset: 2px;
+        }
+             */
+    </style>
+</head>
+
+<body>
+    <div id="div1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque reprehenderit inventore nesciunt
+        sint facilis fugiat fugit quo quia commodi maiores.</div>
+    <div id="div2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque reprehenderit inventore nesciunt
+        sint facilis fugiat fugit quo quia commodi maiores.</div>
+    <br>
+    <!--
+    <input type="text" neme="BBB" id="">
+    -->
+</body>
+
+</html>

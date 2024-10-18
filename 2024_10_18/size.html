@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #vw {
+            /* 
+                vw = 視窗寬度
+                0~100 = 只能設定在這個區域之間
+             */
+            width: 50vw;
+            height: 100px;
+            background: gray;
+        }
+
+        #vh {
+            /* 
+                vh = 視窗高度
+                0~100 = 只能設定在這個區域之間
+             */
+            width: 50px;
+            height: 50vh;
+            background: pink;
+        }
+
+        #vmin {
+            /* 
+            vmin = 視窗的寬或高最小的來取用
+             */
+            width: 50vmin;
+            height: 50vh;
+            background: skyblue;
+        }
+
+        #vmax {
+            /* 
+            vmax = 視窗的寬或高最大的來取用
+             */
+            width: 50vmax;
+            height: 50vh;
+            background: pink;
+        }
+
+        #out {
+            width: 300px;
+            height: 300px;
+            background: orange;
+        }
+
+        #in {
+            /* 內層必須要設定高度 內層BOX才有效 */
+            background: brown;
+            /* calc 不同單位的計算 四則運算前後都要有空白 */
+            width: calc(50% + 20px);
+            height: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="vw">vw</div>
+    <div id="vh">vh</div>
+    <div id="vmin">vmin</div>
+    <div id="vmax">vmax</div>
+    <div id="out">
+        <div id="in"></div>
+    </div>
+</body>
+
+</html>

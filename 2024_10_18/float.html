@@ -5,10 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        /* 會變成區塊元素 */
+        .left {
+            float: left;
+        }
+
+        .right {
+            float: right;
+        }
+    </style>
 </head>
 
 <body>
-
+    <!-- float 的元素不會被計算入高度 -->
+    <div>
+        <div class="box left"></div>
+        <!--  float會把元素變成 display block -->
+        <span class="left">Lorem, ipsum dolor sit </span>
+        <div class="box left"></div>
+        <div class="box right"></div>
+        <p>float 我還在飄</p>
+        <!-- 清除浮動 clear:both 兩邊都清除 -->
+        <p style="clear:both">我不能飄</p>
+    </div>
+    <p>
+        上面的不讓我飄
+    </p>
+    <!-- 在漂浮外層容器加上 overflow: hidden;可以讓漂浮元素被算入高度 -->
+    <div style="overflow: hidden;">
+        <div class="box left"></div>
+        <div class="box left"></div>
+        <div class="box right"></div>
+    </div>
+    <p>
+        我準備要飄
+    </p>
 </body>
 
 </html>

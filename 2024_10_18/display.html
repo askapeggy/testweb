@@ -28,6 +28,26 @@
         p {
             line-height: 3em;
         }
+
+        .inline-block {
+            width: 100px;
+            height: 100px;
+            background: pink;
+            /* display:
+                nono:不顯示
+                inline-block:外在排列和inline相同,內部排列和block想同
+            顯示樣式 */
+            display: inline-block;
+            text-align: center;
+        }
+
+        /* 
+        inline-block 會有4px的間距
+        要掉下面是拿掉間距必須要設定margin
+         */
+        .inline-block:not(:first-child) {
+            margin: -4px;
+        }
     </style>
 </head>
 
@@ -35,9 +55,14 @@
     <!-- <a href="http://x.com">X</a> -->
     <span>AAgaa</span>
     <img img src="https://picsum.photos/16/16/?random=10" alt="">
-    <div style="height: 30px; line-height: 30px; background-color: gray;"></div>
-    <!-- <div style="height: 30px; border: 30px solid black;"> -->
-    AAA
+    <div style="height: 30px; line-height: 30px; background-color: gray;">
+        AAA
+    </div>
+    <div>
+        <div class="inline-block">inline-block</div>
+        <!-- <div class="inline-block" style=" margin-left:-4px;">inline-block</div> -->
+        <div class="inline-block">inline-block</div>
+        <div class="inline-block">inline-block</div>
     </div>
     <!-- 
     <span>BBBBB</span>

@@ -8,10 +8,8 @@
     <title>Document</title>
     <style>
         body {
-            /*
-            調整資料走向
-            direction: ltr;
-            */
+            /* 調整資料走向 direction: ltr; */
+            height: 3000px;
         }
 
         .box {
@@ -27,16 +25,55 @@
             left right 同時設定會依資料走想為主
             top bottom 同時設定時候以top為主
              */
-            top: 100px;
+            left: 20px;
             /* relative 相對於原本位置偏移 */
             position: relative;
+        }
+
+        #absolute-out {
+            width: 300px;
+            height: 300px;
+            background: blue;
+            position: relative;
+        }
+
+        #absolute-in {
+            /* absolute 相對上層偏移 如果都沒有上層就是以body */
+            position: absolute;
+            /* 有寬時候 偏移方式和relative相同  */
+            /* 如果元素沒有寬高時候 可以利用 top bottom left right 來設定 */
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+            background: brown;
+        }
+
+        #fixed {
+            /* fixed 相對於瀏覽器視窗位置 */
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: pink;
+        }
+
+        #sticky {
+            position: sticky;
+            top: 20px;
+            background: green;
         }
     </style>
 </head>
 
-<body">
-    <div id="relative" class="box">relatative</div>
-    <div id="relative" class="box">我是跟屁蟲</div>
-    </body>
+<body>
+    <div id="relative">relatative</div>
+    <!-- <div id="relative" class="box">我是跟屁蟲</div> -->
+    <div id="absolute-out">
+        absolute-out
+        <div id="absolute-in">absolute-in</div>
+    </div>
+    <div id="fixed" class="box">fixed</div>
+    <div id="sticky" class="box">sticky</div>
+</body>
 
 </html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+        .mybox {
+            width: 20vw;
+            background: pink;
+            border: 10px;
+        }
+    </style>
+
+
+</head>
+
+<body>
+    <form action="./getDataMyTest.php">
+        <!-- name -->
+        <!-- label -->
+        <label for="myName">name:</label>
+        <!-- input text -->
+        <input type="text" name="myName" id=""><br>
+
+        <!-- input text -->
+        <label for="myMobile">Mobile:</label>
+        <!-- input text -->
+        <input type="text" name="myMobile" id="myMobile"><br>
+
+        <label for="myPrice">pice:</label>
+        <!-- input text -->
+        <input type="number" name="myPrice" id="myPrice" step="0.0001"><br>
+
+        <label for="mybirthday">birthday:</label>
+        <!-- input text -->
+        <input type="date" name="mybirthday" id="mybirthday"><br>
+
+
+        <P>測試 CheckBox</P>
+        <table class="mybox">
+            <tr>
+                <td>
+                    <input type="checkbox" id="myCBox1" name="myCBox[]" value="testCBox1">
+                    <label for="myCBox1"> 我測試ChechBox1 </label><br>
+                    <input type="checkbox" id="myCBox2" name="myCBox[]" value="testCBox2">
+                    <label for="myCBox2"> 我測試ChechBox2 </label><br>
+                    <input type="checkbox" id="myCBox3" name="myCBox[]" value="testCBox3">
+                    <label for="myCBox3"> 我測試ChechBox3 </label><br>
+                </td>
+            </tr>
+        </table>
+        <br>
+        <!-- 測試 Radio -->
+        <P>測試 Radio</P>
+        <table class="mybox">
+            <tr>
+                <td>
+                    <input type="radio" id="html" name="fav_lang" value="HTML">
+                    <label for="html">HTML</label><br>
+                    <input type="radio" id="css" name="fav_lang" value="CSS">
+                    <label for="css">CSS</label><br>
+                    <input type="radio" id="javascript" name="fav_lang" value="JavaScript">
+                    <label for="javascript">JavaScript</label>
+                </td>
+            </tr>
+        </table>
+
+
+
+        <!-- 送出 -->
+        <!-- submit -->
+        <input type="submit" value="送出"><br>
+    </form>
+</body>
+
+</html>

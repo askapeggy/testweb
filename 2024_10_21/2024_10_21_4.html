@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 改變輸入界面長度 */
+        input[type="text"] {
+            width: 80%;
+        }
+
+        input[type="number"] {
+            width: 80%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action=".\getDataMyTest.php">
+        <!-- input -->
+        <!-- input text -->
+        <!-- input number -->
+        <!-- input datetime -->
+        <!-- input radio -->
+        <!-- input checkbox -->
+        <!-- input submit -->
+
+        <!-- select -->
+        <!-- textarea -->
+
+
+        <!-- input text -->
+        <p>
+            <label for="t1">text</label>
+            <input type="text" name="t1" id="t1" value="text">
+        </p>
+        <!-- input number -->
+        <p>
+            <label for="t2">number</label>
+            <input type="number" name="t2" id="t2" value="0">
+        </p>
+        <!-- input datetime -->
+        <p>
+            <label for="t3">datetime</label>
+            <input type="date" name="t3" id="t3" value="2000-01-01">
+        </p>
+        <!-- input radio 單選 name 要一樣-->
+        <p>radio 單選</p>
+        <p>
+            <input type="radio" name="t4" id="t4" value="HTML">
+            <label for="t3">HTML</label><br>
+            <input type="radio" name="t4" id="t5" value="CSS">
+            <label for="t3">CSS</label><br>
+            <input type="radio" name="t4" id="t6" value="javaScript">
+            <label for="t3">javaScript</label><br>
+        </p>
+        <!-- input checkbox -->
+        <p>複選</p>
+        <p>
+            <input type="checkbox" name="t7[]" id="myCBox1" value="book">
+            <label for="myCBox1"> book </label><br>
+            <input type="checkbox" name="t7[]" id="myCBox2" value="tv">
+            <label for="myCBox2"> tv </label><br>
+            <input type="checkbox" name="t7[]" id="myCBox3" value="sleep">
+            <label for="myCBox3"> sleep </label><br>
+            <input type="checkbox" name="t7[]" id="myCBox4" value="game">
+            <label for="myCBox4"> game </label><br>
+        </p>
+        <!-- select -->
+        <label for="t8">選單水果</label>
+        <select name="t8" id="t8">
+            <option value="o1">芭樂</option>
+            <option value="o2">草莓</option>
+            <option value="o3">蓮霧</option>
+            <option value="o4">香蕉</option>
+        </select>
+        <br><br>
+        <!-- textarea -->
+        <label for="t9">留言</label>
+        <textarea name="t9" id="t9" rows="5" cols="40"></textarea>
+
+        <!-- input submit -->
+        <p>
+            <input type="submit" value="送出">
+        </p>
+        <!-- input submit -->
+        <!-- <input type="submit" value="送出"> -->
+    </form>
+</body>
+
+</html>

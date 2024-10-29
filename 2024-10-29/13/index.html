@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 48px;
+            /* 字體大小 */
+            color: #4a3c2a;
+            /* 深色調的顏色 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            /* 陰影效果 */
+            letter-spacing: 2px;
+            /* 字母間距 */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            /* 使文字全部大寫 */
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 64px;
+            /* 字體大小 */
+            color: #4a3c2a;
+            /* 深色調的顏色 */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            /* 陰影效果 */
+            letter-spacing: 2px;
+            /* 字母間距 */
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            /* 使文字全部大寫 */
+            animation: fadeIn 5s ease-in-out, bounce 2s infinite;
+            /* 添加動畫 */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-100px);
+            }
+
+            60% {
+                transform: translateY(-75px);
+            }
+        }
+
+
+
+        table {
+            border-collapse: collapse;
+            width: 25%;
+            margin: auto;
+            text-align: center;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        tr {
+            background-color: #ffffff;
+        }
+
+        td {
+            border: 1px solid #ddd;
+            height: 20vh;
+            padding: 0;
+            /* 清除內邊距 */
+            transition: background-color 0.3s;
+        }
+
+        td a {
+            text-decoration: none;
+            color: #333;
+            font-size: 24px;
+            font-weight: bold;
+            display: block;
+            /* 使 a 標籤佔滿整個 td */
+            height: 100%;
+            /* 確保 a 標籤高度填滿 td */
+            width: 100%;
+            /* 確保 a 標籤寬度填滿 td */
+            padding: 20px;
+            /* 內邊距讓文字不緊貼邊緣 */
+            box-sizing: border-box;
+            /* 包含內邊距在寬度計算內 */
+        }
+
+        td:hover {
+            /* background-color: #f0f0f0; */
+            background-color: #707070;
+        }
+
+        /*
+        h3 {
+            text-align: center;
+            color: #333;
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+            */
+    </style>
+</head>
+
+<body>
+    <h3>龍門客棧</h3>
+    <table>
+        <tr>
+            <td>
+                <a href="f3.html">3F_剁椒鱘龍魚</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="f2.html">2F_雨來菇炒蛋</a>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <a href="f1.html">1F_宮保皮蛋</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

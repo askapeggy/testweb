@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /*
+        body {
+            background-image: url("./ABC.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+            */
+
+        .box {
+            width: 900px;
+            height: 650px;
+            background-color: lightgreen;
+            background-image: url("./photo.webp");
+        }
+
+        .box1 {
+            margin-top: -270px;
+            margin-left: 700px;
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0);
+            background-image: url("./ABC.webp");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(0, 0, 0, 0);
+            background-image: url("./photo.webp");
+            background-clip: 100 100 200 300;
+
+            background-position: -200px -40px;
+            /* 向左上角移動 100px */
+            background-size: 600px 600px;
+            /* 根據提取區域調整背景圖片大小 */
+            background-repeat: no-repeat;
+            /* 不重複顯示 */
+        }
+    </style>
+</head>
+
+<body>
+    <h3>img 圖片</h3>
+    <img src="./ABC.webp" alt="">
+    <h3>box background</h3>
+    <div class="box">
+    </div>
+    <h3>互疊</h3>
+    <div class="box1">
+    </div>
+    <br>
+    <br>
+    <br>
+    <h3>截圖</h3>
+    <div class="box2">
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 後代的下一層 */
+        /*
+        div>p {
+            background-color: aqua;
+        }
+            */
+
+        /* 後代選擇器全部  少用 */
+        /*
+        div p {
+            background-color: pink;
+        }
+            */
+
+        /*
+        div~p {
+            background-color: blueviolet;
+        }
+            */
+
+        div+p {
+            background-color: brown;
+        }
+    </style>
+</head>
+
+<body>
+    <h3>Css selectors</h3>
+    <hr>
+    <h3>combinators selectors</h3>
+    <!-- id -->
+    <!--
+    <p>Lorem ipsum, <span id="span-id"> sit</span> amet</p>
+    <p class="p-class">Lorem ipsum, <span id="span-id"> sit</span> amet</p>
+    -->
+    <div>
+        <p>Lorem ipsum, sit amet</p>
+        <p>Lorem ipsum, sit amet</p>
+        <main>
+            <p>Lorem ipsum, sit amet</p>
+        </main>
+        <p>LLLLLLLorem ipsum, sit amet</p>
+    </div>
+    <p>PPPPPPLorem ipsum, sit amet</p>
+    <p>MMMMMMLorem ipsum, sit amet</p>
+    <div></div>
+    <p>RRRRRLorem ipsum, sit amet</p>
+
+
+</body>
+
+</html>

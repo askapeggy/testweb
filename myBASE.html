@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 設定方框區間 */
+            box-sizing: border-box;
+        }
+
+        /* 基礎box */
+        .testBox {
+            /* 設定背景顏色 */
+            background-color: pink;
+            /* 設定邊線大小顏色 */
+            border: 10px solid black;
+            /* 設定四邊的導角 */
+            border-radius: 10px;
+            /* 設定BOX 寬度 */
+            width: 100px;
+            /* 設定BOX 高度 */
+            height: 100px;
+            /* 設定陰影 X外推 Y外推 陰影大小 陰影顏色 */
+            box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* flex BOX 基本 */
+        .myBaseContainer {
+            display: flex;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        /* flex box */
+        .flexMy {
+            width: 80%;
+            height: 10vh;
+            background-color: aqua;
+            justify-content: space-between;
+        }
+
+        /* flex Item */
+        .flexMyItem {
+            margin-bottom: 5px;
+            margin-left: 0px;
+            width: 50px;
+            height: 50px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="testBox">
+        ABC
+    </div>
+    <div class="myBaseContainer flexMy">
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+        <div class="flexMyItem">ABC</div>
+        <div class="flexMyItem">EFG</div>
+        <div class="flexMyItem">HIJ</div>
+        <div class="flexMyItem">KLM</div>
+        <div class="flexMyItem">NOP</div>
+        <div class="flexMyItem">QRS</div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: rgb(230, 95, 5);
+        }
+
+        /* flex BOX 基本 */
+        /* 挖出大區塊 產品部分 */
+        .myBaseContainer {
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        /* flex box */
+        /* 橫條整個佔滿 */
+        .flexMy {
+            width: 100wh;
+            height: 70vh;
+            /* background-color: aqua; */
+            background-color: rgba(0, 0, 0, 0.0);
+            justify-content: space-between;
+        }
+
+        /* 挖出總價區塊 產品部分 */
+        .flexTotal {
+            width: 100wh;
+            height: 20vh;
+            /* background-color: aqua; */
+            background-color: rgba(0, 0, 0, 0.0);
+            justify-content: right;
+        }
+
+        /* 橫條 中單一區塊 */
+        .flexItme {
+            display: flex;
+            width: 100%;
+            height: 33%;
+            /* background-color: pink; */
+            background-color: rgba(0, 0, 0, 0.0);
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        /* flex Item */
+        .flexMyItem {
+            margin-bottom: 5px;
+            margin-left: 0px;
+            width: 24.5%;
+            height: 100%;
+            /* background-color: blueviolet; */
+            background-color: rgba(0, 0, 0, 0.0);
+        }
+
+        /* 總價的區塊 */
+        .totalItem {
+            width: 50%;
+            font-size: 2.5vw;
+        }
+
+        /* 圖片中基本的屬性 */
+        .flexImageBase {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 10px;
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 圖片1 */
+        .flexImage_1 {
+            background-image: url("./1.jpg");
+        }
+
+        /* 圖片2 */
+        .flexImage_2 {
+            background-image: url("./2.jpg");
+        }
+
+        /* 圖片3 */
+        .flexImage_3 {
+            background-image: url("./3.jpg");
+        }
+
+        /* 品項內部文字 */
+        .textbase {
+            font-size: 2.5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        /* 全部總價的字體 */
+        .textTotal {
+            font-size: 4.5vw;
+        }
+
+        @media (min-width:600px) {
+            .textbase {
+                font-size: 1.5vw;
+            }
+        }
+
+        @media(max-width:1200px) {
+            .textbase {
+                font-size: 2.5vw;
+            }
+        }
+
+        /* input 字體大小 */
+        .myNumber {
+            width: 50%;
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="">
+        <div class="myBaseContainer flexMy">
+            <!-- 品項 -->
+            <div class="flexItme">
+                <!-- 圖片 -->
+                <div class="flexMyItem flexImageBase flexImage_1">
+                </div>
+                <!-- 金額 -->
+                <div class="flexMyItem textbase">
+                    單價: 100 元
+                </div>
+                <!-- 單項數量 -->
+                <div class="flexMyItem textbase">
+                    <label for="">數量:</label>
+                    <input class="myNumber" type="number" id="input_1">
+                </div>
+                <!-- 單項總價 -->
+                <div class="flexMyItem textbase" id="View_1">
+                    總價: 0 元
+                </div>
+            </div>
+            <!-- 品項 -->
+            <div class="flexItme">
+                <!-- 圖片-->
+                <div class="flexMyItem flexImageBase flexImage_2">
+                </div>
+                <!-- 金額 -->
+                <div class="flexMyItem textbase">
+                    單價: 200 元
+                </div>
+                <!-- 單項數量 -->
+                <div class="flexMyItem textbase">
+                    <label for="">數量:</label>
+                    <input class="myNumber" type="number" id="input_2">
+                </div>
+                <!-- 單項總價 -->
+                <div class="flexMyItem textbase" id="View_2">
+                    總價: 0 元
+                </div>
+            </div>
+            <!-- 品項 -->
+            <div class="flexItme">
+                <!-- 圖片 -->
+                <div class="flexMyItem flexImageBase flexImage_3">
+                </div>
+                <!-- 金額 -->
+                <div class="flexMyItem textbase">
+                    單價: 300 元
+                </div>
+                <!-- 單項數量 -->
+                <div class="flexMyItem textbase">
+                    <label for="">數量:</label>
+                    <input class="myNumber" type="number" id="input_3">
+                </div>
+                <!-- 單項總價 -->
+                <div class="flexMyItem textbase" id="View_3">
+                    總價: 0 元
+                </div>
+            </div>
+        </div>
+    </form>
+    <hr>
+    <div class="myBaseContainer flexTotal">
+        <!-- 單項總價 -->
+        <div class="totalItem flexMyItem textbase" id="View_total">
+            總價: 0 元
+        </div>
+    </div>
+
+    <script>
+        var m1 = 0;
+        var m2 = 0;
+        var m3 = 0;
+
+        // 取得 input 元素
+        const input1 = document.getElementById('input_1');
+        // 當使用者放開按鍵時觸發
+        input1.addEventListener('keyup', (event) => {
+            m1 = input1.value * 100;
+            document.getElementById('View_1').innerText = '總價: ' + m1 + " 元";
+            viewTotal();
+        });
+
+        // 取得 input 元素
+        const input2 = document.getElementById('input_2');
+        // 當使用者放開按鍵時觸發
+        input2.addEventListener('keyup', (event) => {
+            m2 = input2.value * 200;
+            document.getElementById('View_2').innerText = '總價: ' + m2 + " 元";
+            viewTotal();
+        });
+
+        // 取得 input 元素
+        const input3 = document.getElementById('input_3');
+        // 當使用者放開按鍵時觸發
+        input3.addEventListener('keyup', (event) => {
+            m3 = input3.value * 300;
+            document.getElementById('View_3').innerText = '總價: ' + m3 + " 元";
+            viewTotal();
+        });
+        // 顯示總價
+        function viewTotal() {
+            let totalM = m1 + m2 + m3;
+            document.getElementById('View_total').innerText = '總價: ' + totalM + " 元";
+        }
+    </script>
+</body>
+
+</html>

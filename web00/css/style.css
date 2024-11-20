@@ -108,6 +108,12 @@ footer {
     border-top: 0px;
 }
 
+h1 {
+    color: red;
+}
+
+/* 以上是切版 使用 */
+
 .header-logo-1 {}
 
 /* 圖形縮放 logo1 and logo3 */
@@ -121,8 +127,4 @@ footer {
     width: 994px;
     height: 60px;
     object-fit: contain;
-}
-
-h1 {
-    color: red;
 }

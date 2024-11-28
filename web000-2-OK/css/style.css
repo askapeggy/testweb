@@ -1,0 +1,122 @@
+.container {
+    width: 1024px;
+    height: 768px;
+    background-color: gray;
+}
+
+header {
+    width: 1024px;
+    height: 65px;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.main {
+    display: flex;
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+    background-color: blueviolet;
+}
+
+.m-l {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+    background-color: antiquewhite;
+}
+
+.m-l-h {
+    width: 215px;
+    height: calc(768px - 65px - 20px - 25px);
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0px;
+    text-align: center;
+}
+
+.m-item-h {
+    font-family: '標楷體';
+    font-size: 24px;
+    color: #ff00ff;
+}
+
+.m-item {
+    display: flex;
+    font-family: '標楷體';
+    width: 200px;
+    height: 35px;
+    font-size: 16px;
+
+    background-image: url("../Images/menu1.png");
+    background-size: cover;
+    margin: auto;
+    margin-bottom: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.m-item:hover {
+    background-image: url("../Images/menu2.png");
+    background-size: cover;
+    color: red;
+}
+
+.m-l-f {
+    font-family: '標楷體';
+    width: 215px;
+    height: 25px;
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0px;
+
+    text-align: center;
+}
+
+.m-r {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+    background-color: palegreen;
+}
+
+.m-r-h {
+    width: calc(1024px - 215px);
+    height: 29px;
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0px;
+}
+
+.m-r-f {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px - 29px);
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0px;
+}
+
+iframe {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px - 29px);
+}
+
+
+footer {
+    width: 1024px;
+    height: 20px;
+    background-color: white;
+    border: 1px solid black;
+    border-top: 0px;
+
+    font-family: '標楷體';
+    font-size: 16px;
+    text-align: center;
+}
+
+marquee {
+    font-family: '標楷體';
+    font-size: 24px;
+    color: #0000ff;
+}
+
+h1 {
+    color: red;
+}

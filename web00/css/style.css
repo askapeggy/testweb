@@ -6,7 +6,7 @@
 header {
     width: 1024px;
     height: 65px;
-    background-color: aqua;
+    /* background-color: white; */
     margin: auto;
     border: 1px solid black;
 }
@@ -19,7 +19,7 @@ header {
     /* - 65px ok */
     /* -65 會錯 */
     height: calc(768px - 65px - 20px);
-    background-color: coral;
+    /* background-color: coral; */
     margin: auto;
 }
 
@@ -29,7 +29,7 @@ aside {
     /* - 65px ok */
     /* -65 會錯 */
     height: calc(768px - 65px - 20px);
-    background-color: cadetblue;
+    /* background-color: cadetblue; */
     display: flex;
     flex-direction: column;
 }
@@ -41,15 +41,21 @@ aside {
     /* -65 會錯 */
     /* height: calc(100% - 25px); */
     flex-basis: calc(100% - 25px);
-    background-color: brown;
+    /* background-color: brown; */
     border: 1px solid black;
     border-top: 0px;
+
+}
+
+.aside-title {
+    border-bottom: 5px solid rgb(136, 36, 182);
+    padding: 5px;
 }
 
 .aside-footer {
     width: 100%;
     height: 25px;
-    background-color: cornflowerblue;
+    /* background-color: cornflowerblue; */
     margin: auto;
     border: 1px solid black;
     border-top: 0px;
@@ -66,7 +72,7 @@ main {
     /* - 65px ok */
     /* -65 會錯 */
     height: calc(768px - 65px - 20px);
-    background-color: darkgreen;
+    /* background-color: darkgreen; */
 }
 
 .main-header {
@@ -78,10 +84,16 @@ main {
     /* -65 會錯 */
     height: 29px;
     /* flex-basis: 29px; */
-    background-color: chocolate;
+    /* background-color: chocolate; */
     border: 1px solid black;
     border-top: 0px;
     border-left: 0px;
+
+    /*
+    font-size: 24px;
+    font-family: '標楷體';
+    color: #0000ff;
+    */
 }
 
 .main-footer {
@@ -92,7 +104,7 @@ main {
     /* - 65px ok */
     /* -65 會錯 */
     height: calc(768px - 65px - 20px - 29px);
-    background-color: deeppink;
+    /* background-color: deeppink; */
     border: 1px solid black;
     border-top: 0px;
     border-left: 0px;
@@ -102,7 +114,7 @@ main {
 footer {
     width: 1024px;
     height: 20px;
-    background-color: burlywood;
+    /* background-color: burlywood; */
     margin: auto;
     border: 1px solid black;
     border-top: 0px;
@@ -113,18 +125,78 @@ h1 {
 }
 
 /* 以上是切版 使用 */
+/*                      */
+/*                      */
+/*                      */
+/*                      */
+/*                      */
 
-.header-logo-1 {}
-
-/* 圖形縮放 logo1 and logo3 */
-.scaled-image-1 {
-    width: 15px;
-    height: 60px;
-    object-fit: contain;
+/* 跑馬燈 */
+marquee {
+    font-size: 24px;
+    font-family: '標楷體';
+    color: #0000ff;
 }
 
-.scaled-image-2 {
-    width: 994px;
-    height: 60px;
-    object-fit: contain;
+/* Menu 字型 */
+.aside-header {
+    font-family: '標楷體';
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+    padding: 10px;
+    color: #FF00FF;
+
+}
+
+/*  日期設定 字型 */
+.aside-footer {
+    font-family: '標楷體';
+    font-size: 16px;
+    font-weight: 3;
+    text-align: center;
+    color: #000000;
+    padding: 3px
+}
+
+/* 選項的設定 */
+.menu {
+    display: flex;
+    /* 垂直 */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 每一個ITEM設定 */
+.menu-item {
+    margin-top: 20px;
+    background-color: aqua;
+    width: 200px;
+    height: 35px;
+    font-size: 16px;
+    background-image: url(../images/menu1.png);
+    border-radius: 20px;
+    padding: 10px;
+    color: #000000;
+}
+
+/* 每一個ITEM 滑鼠上方 */
+.menu-item:hover {
+    background-image: url(../images/menu2.png);
+}
+
+footer {
+    font-family: '標楷體';
+    font-size: 16px;
+    color: #000000;
+    text-align: center;
+}
+
+/*  */
+
+iframe {
+    width: 100%;
+    height: 100%;
+    background-color: aqua;
 }

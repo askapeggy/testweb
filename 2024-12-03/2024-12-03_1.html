@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="button" id="myBtm"> myBtn</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        function gogoole() {
+            window.location.href = "https://www.google.com";
+        }
+        function showText() {
+            console.log("我正在跑....");
+        }
+
+        $(document).ready(function () {
+            const myBtn = $('#myBtm');
+            console.log('myBtn', myBtn);
+
+
+            myBtn.click(function () {
+                /*
+                console.log('myBtn OK');
+                let getScreenHight = window.screen.height;
+                let getScreenWidth = window.screen.width;
+
+                console.log('getScreenWidth', getScreenWidth);
+                console.log('getScreenHight', getScreenHight);
+                // 可以回到上一頁
+                //window.location.href = "https://www.google.com";
+                //不能回到上一頁
+                window.location.replace("https://www.google.com");
+                */
+                setInterval(showText, 100);
+                setInterval(gogoole, 10000)
+            })
+        }
+        );
+
+    </script>
+
+</body>
+
+</html>

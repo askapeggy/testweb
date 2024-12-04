@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            color: red;
+            text-align: center;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .bg-palegreen {
+            background-color: palegreen;
+        }
+
+        .bg-peru {
+            background-color: peru;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box" class="bg-palegreen" onclick="boxFun()"> -->
+    <div id="box" class="bg-palegreen"></div>
+
+    </div>
+
+    <script>
+        // function 區域
+        // 由HTML 元件先加入程式名稱
+        /*
+        function boxFun() {
+            console.log('HELLO BOX');
+            box.setAttribute("class", "bg-peru");
+        }
+            */
+        // 取得資料 區域
+        let box = document.getElementById('box');
+        let count = 0;
+        // 加入事件 event  區域
+        box.addEventListener('click', function () {
+            console.log('HELLO BOX');
+            console.log(`count: ${count}`);
+            count++;
+            box.setAttribute("class", "bg-peru");
+        });
+
+        box.addEventListener('mouseenter', function () {
+            box.setAttribute("class", "bg-peru");
+        });
+        box.addEventListener('mouseleave', function () {
+            box.setAttribute("class", "bg-palegreen");
+        });
+        //box.addEventListener('click', boxFun);
+
+
+        /*
+        console.log(`HELLO JAVASCRIPT`);
+        let name = 'kai';
+
+        console.log(`Hi, I'm ${name}`);
+
+        const mobile = "0911-111-11111";
+        console.log(`mobile:${mobile}`);
+        //1.5
+        const bonus = 1.5;
+
+        //js array
+        myArr = [1, 2, 3];
+        console.log(myArr);
+
+        //Object
+        myObj = {
+            's1': 30,
+            's2': 50,
+            's3': 60,
+        }
+        console.log(myObj);
+
+        console.log(`${myObj['s2']}`);
+
+
+        let box = document.getElementById('box');
+        // css
+        //box.style.backgroundColor = "red";
+
+        // class
+        //box.classList.remove("bg-palegreen");
+        //box.classList.add("bg-peru");
+
+        // attr
+        box.setAttribute("class", "bg-peru");
+
+        console.log(`box`, box);
+
+        */
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box1 {
+            width: 300px;
+            height: 300px;
+        }
+
+        #box {
+            width: 300px;
+            height: 300px;
+        }
+
+        .bg-pink {
+            background-color: pink;
+        }
+
+        .bg-peru {
+            background-color: peru;
+        }
+
+        .bg-blue {
+            background-color: lightblue;
+        }
+
+        .bg-red {
+            background-color: lightpink;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1" class="bg-pink"></div>
+    <input type="text" id="myInpute">
+    <!-- <div id="box" class="bg-blue"> </div> -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+
+            // 1.bind
+            let box = $('#box1');
+            let myinp = $('#myInpute');
+            console.log(box);
+            console.log(myinp);
+            // 2.action
+            //box.attr('class', 'bg-pink');
+            box.text("我在這裡");
+            myinp.val('aaaaa');
+
+            box.click(function (e) {
+                box.attr('class', 'bg-peru');
+            }
+            );
+        });
+    </script>
+
+</body>
+
+</html>

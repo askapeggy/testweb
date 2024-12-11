@@ -8,7 +8,37 @@
 </head>
 
 <body>
+    <button type="button" id="myBtm">myBtm</button>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        let count = 0;
+
+        function showText() {
+            count++;
+            console.log("我正在跑....", count);
+        }
+
+        function sum() {
+
+        }
+
+
+        $(document).ready(function () {
+            const myBtm = $('#myBtm');
+
+            myBtm.click(function (e) {
+                console.log('Hello myBtn');
+
+                setInterval(function () {
+                    showText();
+                    console.log('myBtn Wait~~~');
+                }, 3000);
+            })
+        })
+    </script>
 </body>
 
 </html>

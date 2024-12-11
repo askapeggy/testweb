@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="n1">
+    <input type="text" id="ty">
+    <input type="number" id="n2">
+    <button type="button" id="mybt1">加總</button>
+    <hr>
+    <h1>Result</h1>
+    <h2 id="out1">資料輸出結果</h2>
+    <hr>
+    <h1>10X</h1>
+    <h2 id="out2">資料輸出結果</h2>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        function sum_1(n1, n2, ty) {
+            let ok = 0;
+            switch (ty) {
+                case '+':
+                    ok = n1 + n2;
+                    console.log('+');
+                    break;
+                case '-':
+                    ok = n1 - n2;
+                    console.log("-");
+                    break;
+                case '*':
+                    ok = n1 * n2;
+                    console.log("*");
+                    break;
+                case '/':
+                    ok = n1 / n2;
+                    console.log("/");
+                    break;
+            }
+            return ok;
+        }
+
+        function mul(n1) {
+            return n1 * 10;
+        }
+
+        $(document).ready(function () {
+            const n1 = $('#n1');
+            const n2 = $('#n2');
+            const ty = $('#ty');
+            const o1 = $('#out1');
+            const o2 = $('#out2');
+            const bt1 = $('#mybt1');
+
+            bt1.click(function () {
+                console.log(ty.val());
+                let num1 = Number(n1.val());
+                let num2 = Number(n2.val());
+                let out = sum_1(num1, num2, ty.val());
+                let mulok = mul(out);
+                setTimeout(function () {
+                    o1.text(`${num1}${ty.val()}${num2}=${out}`);
+                    o2.text(`${out}*10=${mulok}`);
+                }, 3000);
+                //o1.text(`${num1}${ty.val()}${num2}=${out}`);
+                //o2.text(`${out}*10=${mulok}`);
+            });
+        });
+    </script>
+
+</body>
+
+</html>

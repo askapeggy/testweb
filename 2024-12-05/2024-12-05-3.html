@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="./sum.php" id="myfrom" method="get">
+        <input type="number" name="num1" id="num1"><br>
+        <input type="text" name="opt" id="opt"><br>
+        <input type="number" name="num2" id="num2"><br>
+        <input type="submit" value="我要送出"><br>
+    </form>
+
+    <hr>
+    <h1 id="view">我是運算完的結果</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        $(document).ready(function () {
+            const myfrom = $('#myfrom');
+            const view = $('#view');
+
+            myfrom.submit(function (e) {
+                e.preventDefault();
+                let data1 = myfrom.serializeArray();
+                console.log(data1);
+                $.ajax({
+                    type: "get",
+                    url: "./sum.php",
+                    data: data1,
+                    dataType: "json",
+                    success: function (response) {
+                        console.log(response);
+                        let vdata = response.sum1 + response.opt + response.sum2 + "=" + response.ret;
+                        view.text(vdata);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX 請求失敗: " + error);
+                    }
+
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="hello">
+    <input type="number" id="mytime">
+    <button type="button" id="mybtn">打招呼</button>
+    <hr>
+    <h1 id="show"> ....</h1>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+        </script>
+    <script>
+        $(document).ready(function () {
+            const txt = $('#hello');
+            const showSec = $('#mytime');
+            const showObj = $('#show');
+            const mybtn = $('#mybtn');
+            let myid = 0;
+            let myid_1 = 0;
+            let count = 0;
+
+            mybtn.click(function () {
+                if (myid != 0) {
+                    clearInterval(myid);
+                    console.log("myid");
+                    myid = 0;
+                }
+                if (myid_1 != 0) {
+                    clearInterval(myid_1);
+                    console.log("myid_1");
+                    myid_1 = 0;
+                }
+                count = 0;
+                console.log(showSec.val());
+                let mySec = showSec.val() * 1000;
+                /*
+                setTimeout(function () {
+                    showObj.text(txt.val());
+                }, mySec);
+                */
+                myid = setInterval(function () {
+                    showObj.text("....");
+                }, mySec / 2);
+                console.log(myid);
+                myid_1 = setInterval(function () {
+                    showObj.text(txt.val());
+                    count++;
+                    if (count == 3) {
+                        clearInterval(myid_1);
+                    }
+                }, mySec);
+            });
+
+        });
+    </script>
+</body>
+
+</html>

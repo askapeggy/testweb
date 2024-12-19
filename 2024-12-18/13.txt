@@ -1,0 +1,76 @@
+﻿物件導向
+1.封裝->封裝將物件的內部屬性和方法隱藏在物件內部，只提供公開的介面讓外部使用者與物件進行互動。
+        主要是保護物件的資料，避免外部直接操作資料，從而提高系統的安全性、可維護性和擴展性。
+2.繼承->繼承現有類別（父類別）屬性和方法的機制。
+        繼承使得我們可以重複使用現有類別的代碼，並在此基礎上擴展新的功能。
+        這樣可以減少代碼重複，增強系統的可維護性和可擴展性。
+3.抽象->(abstract)它讓你能夠定義一個類別或方法的框架，
+        但是不提供具體的實現，這些具體的細節會由子類別來實現。
+        抽象的目的是提供一個共同的接口或結構，強制所有子類別都必須遵循這個結構。
+
+---------範例  使用形狀說明 ---------
+
+1.形狀 class
+2.實體化 三角形  正方形  菱形 
+3.所有形狀  自己顯示出來
+
+//父
+class 形
+{
+    //顏色
+    private $mycolor;
+    //點
+    private $mypoint;
+    //名字
+    private $myname;
+
+    //建構式  point點數 color顏色
+    function __construct($name, $point, $color)
+    {
+        $this->mypoint = $point;
+        $this->mycolor = $color;
+        $this->myname = $name;
+    }
+    //顯示
+    abstract public function Show();
+}
+//子
+class 三角 extends 形
+{
+    public function Show()
+    {
+        echo "我是".$myname;
+        echo "<br>";
+        echo "我的顏色".$mycolor;
+        echo "我有".$mypoin."點";
+    }
+}
+//子
+class 正方 extends 形
+{
+    public function Show()
+    {
+        echo "我是".$myname.",我的顏色".$mycolor.",我有$mypoin點";
+    }
+}
+//子
+class 菱 extends 形
+{
+    public function Show()
+    {
+        echo "我是".$myname;
+        echo "<hr>";
+        echo "我的顏色".$mycolor.",我有$mypoin點";
+    }
+}
+//實作
+$Shapes = [];
+//實體化所有形狀
+$Shapes[] = new 菱("菱形", 4, 黃色);
+$Shapes[] = new 正方("正方形", 4, 紅色);
+$Shapes[] = new 三角("三角形", 3, 藍色);
+//所有形狀顯示
+foreach($Shapes as $Shape)
+{
+    $Shape->show();
+}

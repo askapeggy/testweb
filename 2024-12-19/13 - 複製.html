@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mytable {
+            width: 100%;
+            background-color: gray;
+            border: 2px solid black;
+            box-shadow: 12px 10px gray;
+        }
+    </style>
+</head>
+
+<body>
+    <fieldset>
+        <legend>HR form</legend>
+        <form action=".\getDataMyTest.php">
+            <table class="mytable">
+                <tr style="background-color: pink;">
+                    <td>
+                        <label for="myName">姓名:</label>
+                        <input type="text" name="myName" id="myName">
+                    </td>
+                    <td>
+                        <label for="t1">出生:</label>
+                        <input type="date" name="t1" id="t1" value="2000-01-01">
+                    </td>
+                </tr>
+                <tr style="background-color: burlywood;">
+                    <td>
+                        <label for="myMail">Mail:</label>
+                        <input type="text" name="myMail" id="myMail">
+                    </td>
+                    <td>
+                        <label for="MyHLOE">最高學歷:</label>
+                        <select name="MyHLOE" id="MyHLOE">
+                            <option value="h1">國小</option>
+                            <option value="h2">國中</option>
+                            <option value="h3">高中</option>
+                            <option value="h4">專科</option>
+                            <option value="h5">大學</option>
+                            <option value="h6">碩士</option>
+                            <option value="h7">博士</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="background-color: pink;">
+                    <td>
+                        <label for=" mysex">性別:</label>
+                        <input type="radio" name="t2" id="mysex" value="man">
+                        <label for="t2">男</label>
+                        <input type="radio" name="t3" id="mysex" value="woman">
+                        <label for="t3">女</label>
+                    </td>
+                    <td>
+                        <label for="t4">家中成員</label>
+                        <select name="t4" id="t4">
+                            <option value="o1">1</option>
+                            <option value="o2">2</option>
+                            <option value="o3">3</option>
+                            <option value="o4">4</option>
+                            <option value="o5">5</option>
+                            <option value="o6">6以上</option>
+                        </select>
+                        人
+                    </td>
+                </tr>
+                <tr style="background-color: burlywood;">
+                    <td>
+                        <label for="t5">電話:(開頭0不用輸入)</label>
+                        <input type="number" style="width: 98%" name=" myNumber" id="myNumber">
+                        <br>
+                        <br>
+                    </td>
+                    <td>
+                        <label for="address">地址:</label>
+                        <input type="text" style="width: 98%;" name="myAddress" id="myAddress">
+                        <br>
+                        <br>
+                    </td>
+                </tr>
+                <tr style="background-color: pink;">
+                    <td>
+                        <label for="t6">電腦能力(可以複選):</label><br>
+                        <input type="checkbox" name="t6[]" id="myCBox1" value="Word">
+                        <label for="myCBox1"> Word </label>
+                        <input type="checkbox" name="t6[]" id="myCBox2" value="Excel">
+                        <label for="myCBox2"> Excel </label>
+                        <input type="checkbox" name="t6[]" id="myCBox3" value="PowePoint">
+                        <label for="myCBox3"> PowePoint </label>
+                        <input type="checkbox" name="t6[]" id="myCBox4" value="programming">
+                        <label for="myCBox4"> 程式設計 </label>
+                    </td>
+                    <td>
+                        <label for="t7">駕照(可以複選):</label><br>
+                        <input type="checkbox" name="t7[]" id="myCT1" value="CT1">
+                        <label for="myCT1"> 無駕照 </label>
+                        <input type="checkbox" name="t7[]" id="myCT2" value="CT2">
+                        <label for="myCT2"> 機車 </label>
+                        <input type="checkbox" name="t7[]" id="myCT3" value="CT3">
+                        <label for="myCT3"> 汽車 </label>
+                        <input type="checkbox" name="t7[]" id="myCT4" value="CT4">
+                        <label for="myCT4"> 職業客車 </label>
+                        <input type="checkbox" name="t7[]" id="myCT5" value="CT5">
+                        <label for="myCT5"> 聯結車 </label>
+                        <input type="checkbox" name="t7[]" id="myCT6" value="CT6">
+                        <label for="myCT6"> 重機 </label>
+                    </td>
+                </tr>
+                <tr style="background-color: burlywood;">
+                    <td colspan="2" style="text-align: center;">
+                        <label for="t7">工作經歷:</label><br>
+                        <textarea name="t7" id="t7" rows="8" cols="100%" style="width: 98%;"></textarea>
+                    </td>
+                </tr>
+                <tr style="background-color: pink;">
+                    <td colspan="2" style="text-align: center;">
+                        <label for="t8">自傳:</label><br>
+                        <textarea name="t8" id="t8" rows="20" cols="100%" style="width: 98%;"></textarea>
+                    </td>
+                </tr>
+                <tr style="background-color: burlywood;">
+                    <td colspan="2" style="text-align: center;">
+                        <input
+                            style="width: 98%; height:100px; text-align: center; font-size: 70px;  background-color: gold;"
+                            type="submit" value="送出">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </fieldset>
+</body>
+
+</html>

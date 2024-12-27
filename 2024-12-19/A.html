@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>數字捲動效果</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #2f2f2f;
+            font-family: Arial, sans-serif;
+        }
+
+        .slot-machine {
+            display: flex;
+            gap: 20px;
+        }
+
+        .slot {
+            width: 100px;
+            height: 120px;
+            background-color: #222;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            position: relative;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .slot .number {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 120px;
+            line-height: 120px;
+            text-align: center;
+            font-size: 40px;
+        }
+
+        .slot .number span {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slot-machine">
+        <div class="slot" id="slot1">
+            <div class="number"></div>
+        </div>
+        <div class="slot" id="slot2">
+            <div class="number"></div>
+        </div>
+        <div class="slot" id="slot3">
+            <div class="number"></div>
+        </div>
+        <div class="slot" id="slot4">
+            <div class="number"></div>
+        </div>
+    </div>
+
+    <script>
+        function generateNumbers() {
+            const numbers = [];
+            for (let i = 0; i <= 9; i++) {
+                numbers.push(i);
+            }
+            return numbers;
+        }
+
+        function createSlotContent(slotElement) {
+            const numbers = generateNumbers();
+            let content = '';
+            // 生成數字列
+            for (let i = 0; i < 50; i++) {
+                content += `<span>${numbers[i % 10]}</span>`;
+            }
+            slotElement.innerHTML = content;
+        }
+
+        function startRolling(targetNumber) {
+            const slots = [
+                document.getElementById('slot1'),
+                document.getElementById('slot2'),
+                document.getElementById('slot3'),
+                document.getElementById('slot4')
+            ];
+
+            // 給每個 slot 填充數字內容
+            slots.forEach(slot => createSlotContent(slot.querySelector('.number')));
+
+            let currentNumber = 0;
+            const targetStr = targetNumber.toString().padStart(4, '0'); // 確保數字是四位數字
+
+            // 設定每 50 毫秒更新一次
+            const interval = setInterval(() => {
+                currentNumber++;
+
+                if (currentNumber > targetNumber) {
+                    clearInterval(interval);
+                    return;
+                }
+
+                const currentStr = currentNumber.toString().padStart(4, '0'); // 確保數字是四位數字
+
+                // 更新每個 slot 顯示的數字
+                for (let i = 0; i < 4; i++) {
+                    const digit = currentStr.charAt(i);
+                    const slot = slots[i];
+                    const numberDiv = slot.querySelector('.number');
+                    const spans = numberDiv.querySelectorAll('span');
+
+                    // 移動每個數字
+                    spans.forEach(span => {
+                        if (span.innerText === digit) {
+                            span.style.transition = "top 0.5s ease-in-out"; // 添加過渡效果
+                            span.style.top = '0px'; // 停止位置
+                        } else {
+                            span.style.transition = "top 0.5s ease-in-out"; // 添加過渡效果
+                            span.style.top = '120px'; // 滾動的位置
+                        }
+                    });
+                }
+            }, 100); // 每 100 毫秒更新一次數字
+        }
+
+        startRolling(10000);
+        // 開始捲動數字至 10000
+        //setInterval(() => startRolling(10000), 100); // 每 10 秒捲動一次
+        //setTimeout(() => startRolling(10000), 1000); // 延遲 1 秒後開始捲動
+    </script>
+
+</body>
+
+</html>

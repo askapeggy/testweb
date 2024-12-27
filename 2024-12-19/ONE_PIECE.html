@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>~海賊王~</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            /* 背景色 */
+            background-color: #f9f9e3;
+            /* 字加粗 */
+            font-weight: bold;
+            /* 字變大 */
+            font-size: 20px;
+        }
+
+        /* 導航*/
+        .mynavbar {
+            /* 初始為透明背景 */
+            background-color: rgba(1, 108, 230, 0.8);
+        }
+
+        .box {
+            width: 800px;
+            height: 600px;
+            background-color: royalblue;
+        }
+
+        .boxFull {
+            /* width: 1920px; */
+            width: 100%;
+            height: 600px;
+            background-color: royalblue;
+            /* 使用 flexbox 横向排列子元素 */
+            display: flex;
+        }
+
+        .boxFull_c {
+            width: 50%;
+            height: 600px;
+            background-color: palevioletred;
+        }
+
+        /* 標題圖片 */
+        .titlebox {
+            width: 600px;
+            height: 200px;
+            margin: 0 auto;
+            /* background-color: royalblue; */
+            background-image: url(./Images/title4545.png);
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        .endbox {
+            width: 100%;
+            height: 200px;
+            background-color: palevioletred;
+        }
+
+        /* 簡介使用 */
+        .overTxt {
+            width: 70%;
+        }
+
+        .overEndTxt {
+            width: 100%;
+        }
+
+        .mybox {
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+            border: none;
+            border-radius: 15px;
+        }
+
+        /* 為前一各按钮和圖設置背景色 */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            /* 圖示的背景色 */
+            background-color: black;
+            /* 圓形背景 */
+            border-radius: 50%;
+            /* 大小 */
+            height: 50px;
+            width: 50px;
+        }
+
+        .mycolor {
+            color: blue;
+        }
+
+        /* 使 iframe 調整 */
+        .map-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* 設定圖片的初始 */
+        .image-hover {
+            /* 添加過度效果 */
+            transition: filter 0.3s ease, transform 0.3s ease;
+        }
+
+        /* 設定滑鼠停在上面的效果 */
+        .image-hover:hover {
+            /* 改變滑鼠形状 */
+            cursor: pointer;
+            /* 改變圖像亮度，顏色變化 */
+            filter: brightness(0.7);
+            /* 放大圖像 */
+            transform: scale(1.25);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 導航 -->
+    <div class="container">
+        <nav class="navbar navbar-expand-sm  navbar-light fixed-top mynavbar">
+            <div class="container-fluid">
+                <ul class=" navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#t1">作者簡介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#to02">劇情大綱</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#mydemo_1">海報</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#map">地點_影片簡介</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Role">角色</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+    <!-- 標題 -->
+    <br><br>
+    <div class="container-fluid mx-auto">
+        <div class="titlebox">
+        </div>
+    </div>
+    <!--            我是分割線              -->
+    <!-- 我是故事簡介 -->
+    <br id="t1"><br>
+    <div class="container-fluid overTxt mx-auto">
+        <h1>海賊王<strong>ONE PIECE</strong></h1>
+        <p>是日本漫畫家尾田榮一郎創作的少年漫畫，自1997年7月22日起在集英社旗下雜誌《週刊少年Jump》連載、同年12月發行第一冊單行本，至今已出版90餘冊單行本。並在漫畫雜誌《週刊少年Jump》中長期佔據人氣榜的第一名，單行本在日本以外，亦已有30多個國家翻譯版本發行。另外也衍生出諸多衍生作品，包括同名的電視動畫、電影、小說和電子遊戲等周邊媒體產品。
+        </p>
+        <p>作品以虛構的「大海賊時代」為故事舞台，描述海賊蒙其·D·魯夫想要得到「ONE PIECE」（一個大秘寶）和成為「海賊王」為夢想而出海向「偉大的航道」航行的海洋冒險故事。</p>
+        <p><br id="to02"><br>
+        </p>
+        <h2>劇情大綱</h2>
+        <ul>
+            <li class="mycolor">東方藍篇（動畫：第1～61集）</li>
+        </ul>
+        <dl>
+            <dd>蒙其·D·魯夫童年時受到海賊「紅髮」傑克的啟蒙，自小就立志要成為「海賊王」。17歲時他出海之後，接續遇見了海賊獵人羅羅亞·索隆、航海士娜美、狙擊手騙人布、廚師賓什莫克·香吉士並結為夥伴。他們組成了草帽海賊團準備進入偉大的航道來到了羅格鎮。離開羅格鎮後，一行人在偉大的航路的入口「顛倒山」之前以各自的夢想立誓，跨越顛倒山之後進入偉大的航路，展開下一段冒險。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">阿拉巴斯坦篇（動畫：第62～130集）</li>
+            <dd>
+                <ul>
+                    <li>前往偉大的航路篇（<span lang="ja">リトルガーデン編</span>，收錄卷數：第12～17卷，收錄話數：第101～154話，動畫：第62～92集）&nbsp;:
+                        草帽海賊團一行人來到偉大的航路、在威士忌山峰遇到臥底在秘密犯罪組織巴洛克華克的阿拉巴斯坦王國公主納菲魯塔莉·薇薇，從公主口中得知阿拉巴斯坦正處於水深火熱之中，以及王下七武海『Mr.0』克洛克達爾的陰謀後，魯夫決定幫助這位公主。在途中前往島嶼「小花園」與巴洛克華克的部分成員開戰，並在旅途中為了治好在小花園生病的娜美去了磁鼓島並增添一名船醫夥伴多尼多尼·喬巴。
+                    </li>
+                    <li>決戰阿拉巴斯坦篇（<span lang="ja">アラバスタ編</span>，收錄卷數：第17～24卷，收錄話數：第155～217話，動畫：第93～130集）&nbsp;:
+                        抵達阿拉巴斯坦後，當地因為克洛克達爾的煽動爆發內戰，魯夫最後擊敗克洛克達爾，內戰亦隨之結束。其後薇薇向魯夫等人道別，而原巴洛克華克副社長妮可·羅賓，因失去人生目標，以考古學家的身份加入了草帽海賊團。
+                    </li>
+                </ul>
+            </dd>
+            <li class="mycolor">空島篇（動畫：第144～195集）</li>
+        </ul>
+        <dl>
+            <dd>離開阿拉巴斯坦王國之後，草帽海賊團撞見一艘從天而降的大船，同時紀錄指針竟然向上指向天空。對空島產生興趣的魯夫靠著上升海流前往空島。誤入了空島統治者「神」艾涅爾的領地，草帽海賊團、神的軍團、以及領地原住民「香狄亞」展開激戰，艾涅爾最終被魯夫擊敗，而空島居民和香狄亞一族長達400年的戰爭也終止。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">水之七島篇（動畫：第207～325集）</li>
+            <dd>
+                <ul>
+                    <li>弗克西海賊團篇（<span lang="ja">フォクシー海賊団編</span>，收錄卷數：第32～34卷，收錄話數：第303～321話，動畫：第207～228集）&nbsp;:
+                        草帽海賊團遇見專門以Davy Back Fight遊戲搶奪其它海賊團船員的「銀狐」弗克西，喬巴、羅賓先後被其搶走，兩個海賊團展開爭奪船員的競技比賽。</li>
+                    <li>水之七島篇（<span lang="ja">ウォーターセブン編</span>，收錄卷數：第34～39卷，收錄話數：第322～374話，動畫：第229～263集）&nbsp;:
+                        為修繕傷痕累累的前進梅利號，草帽海賊團來到以造船業聞名的水之七島，卻得知梅莉號已經無法修復的消息，騙人布又慘敗給拆船流氓佛朗基。另一方面，羅賓遇見了政府機關CP9，由於害怕過去發生在自己故鄉的悲劇重演在草帽海賊團上，因此自願被CP9帶走。而騙人布又因不滿魯夫報廢梅利號的決定而決定離開，草帽海賊團陷入分崩離析的危機。
+                    </li>
+                    <li>艾尼愛斯大廳篇（<span lang="ja">エニエス・ロビー編</span>，收錄卷數：第39～46卷，收錄話數：第375～441話，動畫：第264～325集）&nbsp;:
+                        草帽海賊團前往司法島救回羅賓，與世界政府底下的CP9部隊全面對決，最後救回羅賓，騙人布也回到團裡。魯夫等人以火葬儀式為大限已至的梅利號送行，而佛朗基用當初偷來的2億貝里建造一艘新船千陽號，繼續出海冒險，而佛朗基也以船匠的身分加入海賊團。
+                    </li>
+                </ul>
+            </dd>
+            <li class="mycolor">恐怖三桅帆船篇（<span lang="ja">スリラーバーク編</span>，收錄卷數：第46～50卷，收錄話數：第442～489話，動畫：第337～381集）</li>
+        </ul>
+        <dl>
+            <dd>草帽海賊團踏入魔幻的三桅帆船地帶，遇見神秘的骷髏人布魯克，並進入王下七武海月光·摩利亞所布下的陷阱。最後魯夫擊敗了摩利亞，布魯克也以音樂家的身分加入草帽海賊團。</dd>
+        </dl>
+        <ul>
+            <li class="mycolor">頂上戰爭篇（<span lang="ja">動畫：第385～516集</span>）</li>
+            <ul>
+                <li>夏波帝諸島（<span lang="ja">シャボンディ諸島編</span>，收錄卷數：第50～53卷，收錄話數：第490～513話，動畫：第385～405集）&nbsp;:
+                    草帽海賊團進入偉大的航路前半段的最末端夏波帝諸島，和世界貴族天龍人起了衝突，之後遇到海軍上將黃猿、戰桃丸以及和平主義者的圍捕，最後巴索羅繆·大熊利用果實能力幫助草帽海賊團逃脫，把各個船員傳送至不同島嶼。
+                </li>
+                <li>女人島篇（<span lang="ja">女ヶ島編</span>，收錄卷數：第53～54卷；收錄話數，第514～523話，動畫：第408～421集）&nbsp;:
+                    被擊飛至亞馬遜百合的魯夫遇見王下七武海的「海賊女帝」波雅·漢考克，被女帝俘虜後又釋放，得知自己的兄長「火拳」波特卡斯·D·艾斯要被處決，便請漢考克將自己偷渡至海底大監獄「推進城」。</li>
+                <li>推進城篇（<span
+                        lang="ja">インペルダウン編</span>，收錄卷數：第54～56卷，收錄話數：第524～549話，動畫：第422～458集）&nbsp;:魯夫在推進城遇見過去的敵人(「小丑」巴其、以及前巴洛克華克的四位成員)及王下七武海的「海俠」吉貝爾，眾人為達成各自目的，分別先後集結組成聯盟後展開越獄行動，最後魯夫來到處刑的場所海軍本部馬林福特。
+                </li>
+                <li>馬林福特篇（<span
+                        lang="ja">マリンフォード編</span>，收錄卷數：第56～61卷，收錄話數：第550～597話，動畫：第459～516集）&nbsp;:魯夫及越獄同伴、以及為了救艾斯而來的白鬍子海賊團、海軍、八位王下七武海展開了「頂上戰爭」。戰爭最後由「紅髮」傑克出面調停而收場，但遺憾的是艾斯和白鬍子皆殞命於戰場。戰爭結束後，失去了哥哥艾斯並深感自身實力不足的魯夫，在「冥王」雷利的建議下給夥伴留下了訊息，各自展開為期兩年的修行之旅。
+                </li>
+            </ul>
+        </ul>
+        <ul>
+            <li class="mycolor">魚人島篇（動畫：第517～574集）</li>
+        </ul>
+        <dl>
+            <dd>歷經兩年修行後重逢的草帽海賊團為了前往新世界，而出發邁向位於海底10,000公尺以下處的「魚人島」。他們遇到吉貝爾並得知魚人島的悲劇歷史，原本魚人島繼承已故王妃的想法、漸漸地接近與人類和平共處的理想，但是由荷帝·瓊斯所率領的新魚人海賊團卻粉碎了這個美夢。草帽海賊團挺身阻止荷帝所率領的「新魚人海賊團」，並與白星公主為首的魚人與人類之間開始建立新的羈絆。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">龐克哈薩特篇（動畫：第579～625集）</li>
+        </ul>
+        <dl>
+            <dd>草帽海賊團與新任王下七武海托拉法爾加·D·瓦特爾·羅相遇，魯夫接受羅的提議，組成了「海賊同盟」，目標是「四皇」之一的「百獸」海道。他們靠著這強力的同盟來對抗在龐克哈薩特製造人工惡魔果實的凱薩·克勞恩。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">多雷斯羅薩篇（動畫：第629～746集）</li>
+        </ul>
+        <dl>
+            <dd>草帽海賊團和羅潛入到唐吉訶德·多佛朗明哥治理下的王國「多雷斯羅薩」，與多佛朗明哥旗下人馬展開對決，期間與革命軍參謀總長兼魯夫的義兄薩波重逢，在擊敗多佛朗明哥後，多雷斯羅薩的悲劇就此結束。而作為檯面下引路人的多佛朗明哥的垮台，也使得世界局勢開始出現大幅變化。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">佐烏篇（動畫：第751～779集）</li>
+        </ul>
+        <dl>
+            <dd>魯夫等人到佐烏國家與娜美等人會合，但此國家卻已呈現潰滅狀態。一行人追查發生在這個國家的秘密，卻意外發現香吉士出身為殺手家族—傑爾馬66。魯夫一行人為了阻止其結婚，正在思考救回香吉士的方法時，意外得知了和之國光月一族的秘密。魯夫等人得知這件驚人事實，於是將下一個擊倒的目標鎖定為四皇「百獸」海道。魯夫、索隆與和之國光月一族及佐烏的住民為各自的目的分組團隊。
+            </dd>
+        </dl>
+        <ul>
+            <li class="mycolor">圓蛋糕島篇（動畫：第783～877集）</li>
+        </ul>
+        <dl>
+            <dd>魯夫團隊前往四皇「BIG MOM」夏洛特·莉莉所在的「萬國」蛋糕島準備找回要結婚的香吉士。魯夫等人理解香吉士與家族聯姻的真正理由，再度和吉貝爾相會，並與想要暗殺BIG
+                MOM的火戰車海賊團、&nbsp;凱薩·克勞恩組成暫時聯盟，成功破壞雙方聯姻婚禮，救出香吉士和其家族杰爾馬66。吉貝爾為實踐理念，正式宣布退出BIG
+                MOM旗下與辭別太陽海賊團，以掌舵手的身分加入草帽海賊團。在一行人達成目的後，逃出BIG MOM的領地，期間魯夫與BIG MOM海賊團的夏洛特·卡塔克利展開激烈對決，在最後的對決中獲勝。</dd>
+        </dl>
+        <ul>
+            <li class="mycolor">世界會議篇（動畫：第878～890集）</li>
+        </ul>
+        <dl>
+            <dd>世界政府加盟國裡作為代表的50個國家，再度前往「聖地」馬力喬亞召開每4年一次的世界會議，商討世界大局政策。</dd>
+        </dl>
+        <ul>
+            <li class="mycolor">和之國篇（動畫：第891集～）</li>
+        </ul>
+        <dl>
+            <dd>索隆等人按錦衛門的要求偽裝成和之國國民。另一方面，魯夫等人先後抵達四皇「百獸」海道駐紮的和之國。</dd>
+        </dl>
+    </div>
+    <!--            我是分割線              -->
+    <div>
+        <br id="mydemo_1"><br>
+        <!-- 我是海報 -->
+        <div id="mydemo" class="carousel slide" data-bs-ride="carousel">
+
+            <!-- Indicators/dots -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#mydemo" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#mydemo" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#mydemo" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#mydemo" data-bs-slide-to="3"></button>
+                <button type="button" data-bs-target="#mydemo" data-bs-slide-to="4"></button>
+            </div>
+
+            <!-- The slideshow/carousel -->
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./Images/1.jpg" alt="Los Angeles" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Images/2.jpg" alt="Chicago" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Images/3.jpg" alt="New York" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Images/4.jpg" alt="New York_1" class="d-block w-100">
+                </div>
+                <div class="carousel-item">
+                    <img src="./Images/5.jpg" alt="New York_2" class="d-block w-100">
+                </div>
+            </div>
+
+            <!-- Left and right controls/icons -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#mydemo" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mydemo" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <br id="map"><br>
+        <!--            我是分割線              -->
+        <div class="container-fluid">
+            <div class="boxFull">
+                <!-- 我是地圖 -->
+                <div class="boxFull_c">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7667170.558417823!2d134.96551570576955!3d38.35809923551821!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34674e0fd77f192f%3A0xf54275d47c665244!2z5pel5pys!5e1!3m2!1szh-TW!2stw!4v1734596711646!5m2!1szh-TW!2stw"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <!-- 我是影片 -->
+                <div class="boxFull_c">
+                    <iframe id="odysee-iframe" style="width:100%; aspect-ratio:16 / 9;"
+                        src="https://odysee.com/$/embed/@無臉:1/【海賊王】人人都是尼卡！:0?r=67S7utpXXyQWf9tEJ7F9ciVet5LgmrTK"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        <!--            我是分割線              -->
+        <br id="Role"><br>
+        <!-- 我是腳色 -->
+        <audio id="audioElement" src="/sound/sound.mp3"></audio>
+        <div class="container-fluid">
+            <div class="" style="text-align: center; font-size: 36px;">
+                角色
+            </div>
+            <p>&nbsp;</p>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_01.png" alt="娜美" width="421" height="600" class="image-hover"
+                        onclick="playsound(1)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【小賊貓】娜美（奈美）[NAMI]</h3><br>
+                <h3>特徵：極好的身材，左臂有風車和橘子樣的紋身，愛錢和橘子如命！（提到寶藏的時候眼睛就會變成$ $）</h3>
+                <h3>武器：完美版天候棒（原為天候棒）</h3>
+                <h3>特長：繪製地圖，觀測天氣，機敏的身手，處事冷靜極具判斷力，偷東西。
+                    <br>
+                </h3>
+            </div>
+            <p>&nbsp;</p>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_02.png" alt="路飛" width="353" height="600" class="image-hover"
+                        onclick="playsound(2)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【草帽小子】蒙其·D·路飛（蒙其·D·魯夫）[MONKEY·D·LUFFY]<br></h3>
+                <br>
+                <h3> 特徵：天真，戴草帽，戰鬥時草帽拿下來，左眼下方的疤痕（小時候為了證明自己擁有做海賊的勇氣自己劃的）大大的嘴始終展現著燦爛的笑容、好吃、白痴、講義氣。 </h3>
+                <h3>特長：超人系惡魔果實能力者－橡皮果實！攻擊技能：、橡皮亂打、橡皮子彈、橡皮炸彈、橡皮鞭、橡皮戰斧、橡皮火箭、橡皮火箭炮、橡皮攻城炮、橡皮矛槍、橡皮鐮刀、橡皮鍾、橡皮鎚、橡皮棒、橡皮弩、橡皮網、橡皮風車、橡皮盾、橡皮氣球、橡皮大口吃、橡皮掃把腳、橡皮花火、橡皮印章、橡皮雨、橡皮火山爆發…
+                </h3>
+            </div>
+            <p>&nbsp;</p>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_03.png" alt="索隆" width="421" height="600" class="image-hover"
+                        onclick="playsound(3)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【海賊獵人】羅羅諾亞·索隆（羅羅諾亞·卓洛）[RORONOA·ZORO]<br></h3>
+                <br>
+                <h3>
+                    特徵：綠色頭髮，左耳戴三隻黃色露珠耳環，綠色的腰帶 ，腰帶上佩三把刀，左臂綁著綠色的頭巾（戴上意味著索隆認真作戰，戰鬥力劇增）超級路痴、講義氣 、願為朋友而死。</h3>
+                <h3>武器：和道一文字、雪走（在逃離司法島時在橋上被海軍本部上校銹銹果實能力者修恩所毀，剩餘的部分便葬恐怖三桅船Thriller Bark上）；三代鬼徹（擁有能讓敵人產生幻覺的「鬼氣」）
+                    ；黑刀秋水（在恐怖三桅船上打敗龍馬所得）。
+                    <br>
+                </h3>
+            </div>
+            <br>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_04.png" alt="烏索普" width="495" height="600" class="image-hover"
+                        onclick="playsound(4)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【狙擊王】烏索普（騙人布）[USOPP]</h3>
+                <br>
+                <h3>愛好：發明各種東西、製造武器</h3>
+                <h3>特徵：繼承母親的長鼻子，格子頭巾，護目鏡，百寶袋，膽小。</h3>
+                <h3>特長：吹牛，逃跑，彈弓，射擊，畫畫，做偉大的製作。
+                    <br>
+                </h3>
+            </div>
+            <p>&nbsp;</p>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_09.png" alt="香吉士 香吉" width="246" height="346" class="image-hover"
+                        onclick="playsound(5)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【黑足】山治（香吉士 香吉）[SANJI]</h3>
+                <br>
+                <h3> 特徵：黑色西裝；叼著煙；圈圈眉毛；長腿；對美女特別敏感（尤其是娜美，羅賓）；有騎士精神。</h3>
+                <h3>
+                    特長：做菜一級棒，讓敵人望而卻步的腿功和從未展現過的左眼。其招數「整形踢」可改變人的面部骨骼，使達到整形的效果。在迪巴魯篇中其效果最為明顯。不過此招數通常在極為憤怒的情況下才會使出。</h3>
+                <br>
+            </div>
+            <br>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_05.png" alt="喬巴" width="414" height="600" class="image-hover"
+                        onclick="playsound(6)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【最愛吃棉花糖的寵物】托尼托尼·喬巴（東尼東尼·喬巴）[TonyTony·Chopper]</h3>
+                <br>
+                <h3> 特徵：藍鼻子的馴鹿，吃了人人惡魔果實又可以像人一樣說話行走做事（仍可以與動物交流）；非常膽小，碰到事情是總是躲起來，可惜總是躲反（把身子躲到外側）。
+                </h3>
+                <h3>特長：醫術，藍波球</h3>
+            </div>
+            <br>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_06.png" alt="妮可·羅賓" width="384" height="600" class="image-hover"
+                        onclick="playsound(7)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【惡魔之子】妮可·羅賓（妮歌·魯賓）[NICO·ROBIN]<br></h3>
+                <br>
+                <h3> 特徵：喜歡看書，看書時旁邊即使是狂風暴雨也動都不動，有一種神秘的氣質。 黑色長髮、藍黑相間的瞳孔(漫畫為紅色)。 </h3>
+                <h3>特長：花花果實能力者，能使任何自己看得見的地方像花盛開般長出身體的任何部位（眼睛，手，腳等）；歷史學；暗殺。
+                    <br>
+                </h3>
+            </div>
+            <br>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_07.png" alt="弗蘭奇" width="466" height="600" class="image-hover"
+                        onclick="playsound(8)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【人造人】弗蘭奇（卡特·弗蘭姆、佛朗基）[CUTTER·FRANKY]<br></h3>
+                <br>
+                <h3>
+                    特徵：是一個熱衷於穿著三角泳褲的改造人，藍色飛機頭，鋼鐵的身體，黑色三角墨鏡，經常感動的彈吉他和流淚，說話捎帶一點老外調，以可樂為燃料，酷愛可樂。
+                </h3>
+                <h3>特長：不光是修船技術高超，還懂建築。除背後渾身上下都是武器（因為自己夠不到後背）。</h3>
+            </div>
+            <br>
+            <div class="overTxt mx-auto mybox">
+                <div style="text-align: center;">
+                    <img src="/Images/my_08.png" alt="布魯克" width="357" height="497" class="image-hover"
+                        onclick="playsound(9)">
+                </div>
+                <h3 class="mycolor" style="text-align: center;">【鼻歌】布魯克[BROOK]</h3>
+                <br>
+                <h3>愛好：演奏，喝紅茶，說【骷髏冷笑話】，類似於：嚇的我的心臟都在狂跳，雖然我沒有心臟了……</h3>
+                <h3>特徵：雖然已變成了骷髏，但仍有一頭烏黑濃密的爆炸頭，身穿紳士裝，個性頗好色並搞笑，擁有著「喲嚯嚯嚯」的標誌性笑聲。<br>
+                </h3>
+            </div>
+            <p>&nbsp;</p>
+        </div>
+
+        <!-- 我是頁尾 -->
+        <div class="container-fluid overTxt mx-auto mybox" style="background-color: aquamarine;">
+            <h4 class="mx-auto" style="text-align: center;">Copyright © 2024 MyGoPen Inc. 保留一切讓你拷貝權利。沒有銷售就沒有退款問題。</h4>
+            <h6 class="mx-auto" style="text-align: center;">如有問題請使用以下管道反映,保證沒有人回應。</h6>
+            <div class="mx-auto" style="text-align: center;">
+                <a
+                    href="line://ti/g2/KYWBW6E1G0?utm_source=line-openchat-seo&amp;utm_medium=search_keyword&amp;utm_campaign=default">
+                    <img src="/Images/LINE_QRCODE.png" class="image-hover">
+                </a>
+
+                <a
+                    href="
+                    https://www.facebook.com/p/%E8%88%AA%E6%B5%B7%E7%8E%8B%E5%88%86%E4%BA%AB%E5%8D%80-100064669270898/">
+                    <img style="width: 92px; height: 94px;" src=" /Images/qr.ioi.tw.png" class="image-hover">
+                </a>
+            </div>
+        </div>
+
+        <script>
+            function playsound(num) {
+                var audio = document.getElementById("audioElement");
+                audio.play();
+            }
+        </script>
+</body>
+
+</html>

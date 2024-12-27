@@ -1,0 +1,103 @@
+body {
+    font-family: "標楷體";
+}
+
+h1 {
+    color: rebeccapurple;
+}
+
+.c {
+    width: 1024px;
+    height: 768px;
+}
+
+header {
+    width: 1024px;
+    height: 65px;
+    border: 1px solid black;
+}
+
+.m {
+    display: flex;
+    width: 1024px;
+    height: calc(768px - 65px - 20px);
+}
+
+.m-l {
+    width: 215px;
+    height: calc(768px - 65px - 20px);
+}
+
+.m-l-h {
+    width: 215px;
+    height: calc(768px - 65px - 20px - 25px);
+    border: 1px solid black;
+    border-top: 0px;
+}
+
+.m-l-f {
+    width: 215px;
+    height: 25px;
+    border: 1px solid black;
+    border-top: 0px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.m-r {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px);
+}
+
+.m-r-h {
+    width: calc(1024px - 215px);
+    height: 29px;
+    border: 1px solid black;
+    border-top: 0px;
+    border-left: 0px;
+}
+
+.m-r-f {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px - 29px);
+    border: 1px solid black;
+    border-top: 0px;
+}
+
+footer {
+    width: 1024px;
+    height: 20px;
+    border: 1px solid black;
+    border-top: 0px;
+    text-align: center;
+    font-size: 16px;
+}
+
+marquee {
+    font-size: 24px;
+    color: #0000ff;
+}
+
+iframe {
+    width: calc(1024px - 215px);
+    height: calc(768px - 65px - 20px - 29px);
+}
+
+.tt {
+    font-size: 24px;
+    color: #FF00ff;
+    text-align: center;
+}
+
+.titem {
+    margin: auto;
+    font-size: 16px;
+    width: 200px;
+    height: 35px;
+    background: url(/images/menu1.png);
+    text-align: center;
+}
+
+.titem:hover {
+    background: url(/images/menu2.png);
+}

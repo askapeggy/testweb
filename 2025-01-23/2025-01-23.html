@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div id="dataView">
+        <!-- 放入表格 -->
+        <table class="table table-bordered mt-3">
+            <thead>
+                <tr>
+                    <th width="10%">地點</th>
+                    <th width="20%" style="text-align: center;">日出</th>
+                    <th width="20%" style="text-align: center;">日落</th>
+                </tr>
+            </thead>
+            <!-- 放入資料 -->
+            <tbody id="mydata">
+            </tbody>
+        </table>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function () {
+            // 1.bind
+            //const myDel = $('.my-del');
+
+            // 2.action
+            let formData = {
+                Authorization: "CWA-4D9B0BA1-C251-4000-BC11-241EF942BCC1",
+            }
+            /*
+            $.get("https://opendata.cwa.gov.tw/api/v1/rest/datastore/F-C0032-001", formData, function (form) {
+                console.log(form);
+                let mylocation = form.records.location;
+                let myGetdata;
+                // //取資料
+                $.each(mylocation, function (key, value) {
+                    //console.log(value);
+                    let myhtml = `
+                        <tr>
+                            <td>${(key + 1)}</td>
+                            <td>${value.locationName}</td>
+                        </tr>`;
+                    $('#mydata').append(myhtml);
+                });
+            })
+                */
+
+            // 取得今天的日期
+            let today = new Date();
+
+            // 格式化日期：yyyy-mm-dd
+            let dateStr = (today.getFullYear() - 1) + '-' +
+                ('0' + (today.getMonth() + 1)).slice(-2) + '-' +
+                ('0' + today.getDate()).slice(-2);
+            console.log(dateStr);
+            $.get("https://opendata.cwa.gov.tw/api/v1/rest/datastore/A-B0062-001", formData, function (form) {
+                console.log(form);
+                let mylocations = form.records.locations.location;
+                let timedata;
+                // //取資料
+                $.each(mylocations, function (key, value) {
+                    //console.log(value);
+                    timedata = value.time;
+                    //console.log(timedata);
+                    $.each(timedata, function (key, value_1) {
+                        if (value_1.Date == dateStr) {
+                            console.log(value_1);
+                            let myhtml = `
+                                <tr>
+                                    <td>${value.CountyName}</td>
+                                    <td>${value_1.BeginCivilTwilightTime}</td>
+                                    <td>${value_1.EndCivilTwilightTime}</td>
+                                </tr>`;
+                            $('#mydata').append(myhtml);
+                            return false;
+                        }
+                    });
+                    /*
+                    let myhtml = `
+                        <tr>
+                            <td>${value.CountyName}</td>
+                            <td>${value.BeginCivilTwilightTime}</td>
+                        </tr>`;
+                    $('#mydata').append(myhtml);
+                    */
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>

@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
         integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
 </head>
 
 <body>
-
 
     <div class="container mt-3">
         <h2>Hover Rows</h2>
@@ -22,9 +22,9 @@
                 <tr>
                     <th>ID</th>
                     <th>NAME</th>
-                    <th>time1</th>
-                    <th>time2</th>
-                    <th>time3</th>
+                    <th id="time1">time1</th>
+                    <th id="time2">time2</th>
+                    <th id="time3">time3</th>
                 </tr>
             </thead>
             <tbody>
@@ -46,10 +46,10 @@
         integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <script src="../kai/pw.js"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>        
     <script>
         $(document).ready(function () {
-            let pwd = pw;
+            let pwd = "CWA-4D9B0BA1-C251-4000-BC11-241EF942BCC1";
             console.log('pwd', pwd);
 
             // 1.bind
@@ -80,28 +80,78 @@
                         let tmpLocationID = key;
                         let tmpWeatherElement = value.weatherElement;
                         console.log('tmpWeatherElement', tmpWeatherElement);
-                        console.log('tmpWeatherElement[2]', tmpWeatherElement[2]);
+                        console.log('tmpWeatherElement[2]', tmpWeatherElement[2].time[0]);
+
+                        //console.log('tmpWeatherElement[4]', tmpWeatherElement[4]);
 
                         // 1.地名
                         console.log('tmpLocationName', tmpLocationName);
+
+
+                        $('#time1').text(tmpWeatherElement[2].time[0].startTime.substr(11, 2) + "到" + tmpWeatherElement[2].time[0].endTime.substr(11, 2));
+                        $('#time2').text(tmpWeatherElement[2].time[1].startTime.substr(11, 2) + "到" + tmpWeatherElement[2].time[1].endTime.substr(11, 2));
+                        $('#time3').text(tmpWeatherElement[2].time[2].startTime.substr(11, 2) + "到" + tmpWeatherElement[2].time[2].endTime.substr(11, 2));
+                        let dn = [];
+                        if(tmpWeatherElement[2].time[0].startTime.substr(11, 2) == '06')
+                            dn[0] = 'day'
+                        else
+                            dn[0] = 'night'
+                        if(tmpWeatherElement[2].time[1].startTime.substr(11, 2) == '06')
+                            dn[1] = 'day'
+                        else
+                            dn[1] = 'night'
+                        if(tmpWeatherElement[2].time[2].startTime.substr(11, 2) == '06')
+                            dn[2] = 'day'
+                        else
+                            dn[2] = 'night'
 
                         // 2.table
                         let temText = `
                             <tr>
                                 <td>${tmpLocationID + 1}</td>
                                 <td>${tmpLocationName}</td>
-                                <td>11 - 13 度c</td>
-                                <td>11 - 13 度c</td>
-                                <td>11 - 13 度c</td>
-                            </tr>
-                        `;
-
+                                <td>${tmpWeatherElement[2].time[0].parameter.parameterName}度 - ${tmpWeatherElement[4].time[0].parameter.parameterName}度
+                                        <img src="./${dn[0]}/${tmpWeatherElement[0].time[0].parameter['parameterValue']}.svg" alt="" srcset="">
+                                </td>
+                                <td>${tmpWeatherElement[2].time[1].parameter.parameterName}度 - ${tmpWeatherElement[4].time[1].parameter.parameterName}度
+                                    <img src="./${dn[1]}/${tmpWeatherElement[0].time[1].parameter['parameterValue']}.svg" alt="" srcset="">
+                                </td>
+                                <td>${tmpWeatherElement[2].time[2].parameter.parameterName}度 - ${tmpWeatherElement[4].time[2].parameter.parameterName}度
+                                    <img src="./${dn[2]}/${tmpWeatherElement[0].time[2].parameter['parameterValue']}.svg" alt="" srcset="">
+                                </td>
+                            </tr>`;
                         $(myTbody).append(temText);
-
                     });
-
-
-
+                    let table = new DataTable('#myTable', 
+                            {
+                                language: {
+                                        "lengthMenu": "顯示 _MENU_ 筆資料",
+                                        "sProcessing": "處理中...",
+                                        "sZeroRecords": "没有匹配结果",
+                                        "sInfo": "目前有 _MAX_ 筆資料",
+                                        "sInfoEmpty": "目前共有 0 筆紀錄",
+                                        "sInfoFiltered": " ",
+                                        "sInfoPostFix": "",
+                                        "sSearch": "搜尋:",
+                                        "sUrl": "",
+                                        "sEmptyTable": "尚未有資料紀錄存在",
+                                        "sLoadingRecords": "載入資料中...",
+                                        "sInfoThousands": ",",
+                                        "oPaginate": {
+                                            "sFirst": "首頁",
+                                            "sPrevious": "上一頁",
+                                            "sNext": "下一頁",
+                                            "sLast": "末頁"
+                                        },
+                                        "order": [
+                                            [0, "desc"]
+                                        ],
+                                        "oAria": {
+                                            "sSortAscending": ": 以升序排列此列",
+                                            "sSortDescending": ": 以降序排列此列"
+                                        }
+                                    },
+                            });
                 }
             });
 

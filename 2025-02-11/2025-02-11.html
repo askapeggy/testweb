@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- link css 順序 1.bs 2.self -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"
+        integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/2.2.2/css/dataTables.dataTables.css" />
+</head>
+<body>
+    <table id="myTable" class="display">
+        <thead>
+        </thead>
+        <tbody>
+            <!--
+            <tr>
+                <td>Row 1 Data 1</td>
+                <td>Row 1 Data 2</td>
+            </tr>
+            <tr>
+                <td>Row 2 Data 1</td>
+                <td>Row 2 Data 2</td>
+            </tr>
+            -->
+        </tbody>
+    </table>
+    
+    <!-- js include 順序 1.bs 2.jq 3.self -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"
+    integrity="sha512-7Pi/otdlbbCR+LnW+F7PwFcSDJOuUJB3OxtEHbg4vSMvzvJjde4Po1v4BR9Gdc9aXNUNFVUY+SK51wWT8WF0Gg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.datatables.net/2.2.2/js/dataTables.js"></script>        
+    <script>
+        $(document).ready(function ()
+        {
+            const myTable = $('#myTable');
+            const myThead = myTable.find('thead');
+            const myTbody = myTable.find('tbody');
+            $.getJSON("ABC.json", function(res)
+            {
+                console.log(res);
+                let keys = Object.keys(res[0]);
+                let d1 = `<tr>`;
+                keys.forEach(function(key) {
+                    d1 = d1 + "<th>" + key + "</th>";
+                });
+                d1 = d1+`</tr>`;
+                myThead.append(d1);
+
+                
+                let d2 = "";
+                // 遍歷 res 陣列，取出每一筆資料
+                res.forEach(function(item) {
+                    d2 += "<tr>"; // 開始表格列
+                    Object.values(item).forEach(function(value) {
+                        d2 += `<td>${value}</td>`; // 取出該筆資料的每個值
+                    });
+                    d2 += "</tr>"; // 結束表格列
+                });
+                myTbody.append(d2);
+                new DataTable(myTable, {
+                // config options...
+                paging: true,
+                searching: true,
+                info: true
+                });
+            });
+        });
+        /*
+        $(document).ready(function () {
+            const myTable = $('#myTable');
+            const myThead = myTable.find('thead');
+            const myTbody = myTable.find('tbody');
+
+            $.getJSON("ABC.json", function(res) 
+            {
+                console.log(res);
+                // **檢查 JSON 是否有資料**
+                if (res.length === 0) {
+                    console.warn("JSON 文件為空，無法生成表格！");
+                    return;
+                }
+                // **建立表頭**
+                let keys = Object.keys(res[0]);
+                let d1 = "<tr>";
+                keys.forEach(function(key) 
+                {
+                    d1 += "<th>" + key + "</th>";
+                });
+                d1 += "</tr>";
+                myThead.append(d1);
+                // **建立表格內容**
+                let d2 = "";  // **正確初始化 d2**
+                res.forEach(function(item) 
+                {
+                    d2 += "<tr>"; // 開始表格列
+                    Object.values(item).forEach(function(value) {
+                        d2 += `<td>${value}</td>`; // 取出該筆資料的每個值
+                    });
+                    d2 += "</tr>"; // 結束表格列
+                });
+                myTbody.append(d2);
+            // **確保表格內容載入後再初始化 DataTable**
+            new DataTable(myTable, 
+            {
+                paging: true,
+                searching: true,
+                info: true
+            });
+        });
+    });
+*/
+    </script>
+</body>
+</html>
